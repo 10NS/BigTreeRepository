@@ -3,14 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Big Tree Landscaping <\title>
+  <title>Big Tree Landscaping • The best motherfucking landscpaing company at least in Austin lol</title>
   <style>
     :root {
-      --primary: #2e7d32;
-      --primary-dark: #1b5e20;
-      --light: #f8f9fa;
-      --dark: #212529;
-      --gray: #6c757d;
+      --bg: #0f1217;
+      --bg-light: #1a1f2b;
+      --text: #e5e7eb;
+      --text-light: #9ca3af;
+      --primary: #4ade80;
+      --primary-dark: #22c55e;
+      --accent: #6ee7b7;
+      --border: #334155;
+      --card: #1e293b;
     }
 
     * {
@@ -22,8 +26,8 @@
     body {
       font-family: 'Segoe UI', system-ui, sans-serif;
       line-height: 1.6;
-      color: #333;
-      background-color: var(--light);
+      color: var(--text);
+      background-color: var(--bg);
     }
 
     /* Navigation */
@@ -32,13 +36,9 @@
       width: 100%;
       top: 0;
       z-index: 1000;
-      background: #1f1d1d;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      transition: background 0.4s;
-    }
-
-    nav.scrolled {
-      background: rgba(255,255,255,0.98);
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
 
     .nav-container {
@@ -53,10 +53,6 @@
     .logo {
       font-size: 1.8rem;
       font-weight: 800;
-      color: var(--primary-dark);
-    }
-
-    .logo span {
       color: var(--primary);
     }
 
@@ -68,7 +64,7 @@
 
     .nav-links a {
       text-decoration: none;
-      color: var(--dark);
+      color: var(--text);
       font-weight: 500;
       transition: color 0.3s;
     }
@@ -82,7 +78,7 @@
     #home {
       height: 100vh;
       min-height: 700px;
-      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
+      background: linear-gradient(rgba(15,18,23,0.75), rgba(15,18,23,0.85)),
                   url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80') center/cover no-repeat;
       color: white;
       display: flex;
@@ -100,6 +96,7 @@
       font-size: clamp(3rem, 8vw, 5.5rem);
       margin-bottom: 1.5rem;
       line-height: 1.1;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.7);
     }
 
     .hero-content p {
@@ -108,12 +105,13 @@
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
+      color: #d1d5db;
     }
 
     .btn {
       display: inline-block;
       background: var(--primary);
-      color: white;
+      color: #0f1217;
       padding: 1rem 2.2rem;
       border-radius: 50px;
       text-decoration: none;
@@ -124,10 +122,10 @@
     }
 
     .btn:hover {
-      background: white;
-      color: var(--primary-dark);
+      background: transparent;
+      color: var(--primary);
       transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      box-shadow: 0 10px 25px rgba(74,222,128,0.25);
     }
 
     /* Sections */
@@ -141,7 +139,7 @@
       text-align: center;
       font-size: 3rem;
       margin-bottom: 1rem;
-      color: var(--primary-dark);
+      color: var(--primary);
     }
 
     h2::after {
@@ -165,14 +163,15 @@
     #about img {
       width: 100%;
       border-radius: 12px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+      border: 1px solid var(--border);
     }
 
     /* Gallery */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
+      gap: 1.8rem;
       margin-top: 3rem;
     }
 
@@ -180,7 +179,9 @@
       position: relative;
       overflow: hidden;
       border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      background: var(--card);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      border: 1px solid var(--border);
     }
 
     .gallery-item img {
@@ -206,10 +207,16 @@
     input, textarea {
       width: 100%;
       padding: 1rem 1.4rem;
-      border: 1px solid #ddd;
+      border: 1px solid var(--border);
       border-radius: 8px;
       font-size: 1.05rem;
       font-family: inherit;
+      background: var(--bg-light);
+      color: var(--text);
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: var(--text-light);
     }
 
     textarea {
@@ -219,10 +226,11 @@
 
     /* Footer */
     footer {
-      background: var(--dark);
-      color: white;
+      background: #0a0d12;
+      color: var(--text-light);
       text-align: center;
       padding: 3rem 1rem 2rem;
+      border-top: 1px solid var(--border);
     }
 
     @media (max-width: 850px) {
@@ -252,7 +260,7 @@
 
   <nav id="navbar">
     <div class="nav-container">
-      <div class="logo">Green<span>Scape</span></div>
+      <div class="logo">Big<span>Tree</span></div>
       <ul class="nav-links">
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -265,96 +273,59 @@
   <section id="home">
     <div class="hero-content">
       <h1>Transforming Outdoor Spaces</h1>
-      <p>Professional landscaping services that bring your dream yard to life — design, installation, maintenance & hardscaping</p>
+      <p>Professional landscaping design, installation, hardscaping & maintenance — creating yards you'll love year-round</p>
       <a href="#contact" class="btn">Get a Free Quote</a>
     </div>
   </section>
 
   <section id="about">
-    <h2>About Big Tree</h2>
+    <h2>About </h2>
     <div class="content">
       <div>
-        <p>Since 2021, Big Tree Landscaping has been creating beautiful, functional outdoor spaces throughout Austin Texas.</p>
-        <p>We specialize in:</p>
+        <p>With more than a decade of experience, Big Tree creates beautiful, durable, and low-maintenance outdoor living spaces.</p>
+        <p>Our services include:</p>
         <ul>
-          <li>Complete landscape design & installation</li>
-          <li>Hardscaping</li>
-          <li>Lawn care & seasonal maintenance</li>
-          <li>Irrigation systems & drainage solutions</li>
-          <li>Native & sustainable plantings</li>
+          <li>Custom landscape design & planting</li>
+          <li>Patios, walkways, retaining walls</li>
+          <li>Lawn installation & seasonal care</li>
+          <li>Smart irrigation & drainage</li>
+          <li>Native, drought-tolerant & pollinator gardens</li>
           <li>Outdoor lighting & water features</li>
         </ul>
-        <p>We take pride in using high-quality materials to reinvent your property into your dream landscape</p>
+        <p>We focus on quality materials, clean workmanship, and sustainable practices.</p>
       </div>
-      <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Professional landscaper working">
+      <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Landscaper installing stonework">
     </div>
   </section>
 
   <section id="gallery">
-    <h2>Gallery</h2>
+    <h2>Our Projects</h2>
     <div class="gallery-grid">
-      <!-- You should replace these with your real project photos -->
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1558909278-8431463c6e42?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern backyard patio"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lush green lawn"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Stone retaining wall"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1621905252472-943afaa20e20?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Water feature garden"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1594571144685-e0b2f9b97b9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Front yard landscaping"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Landscape lighting"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1558909278-8431463c6e42?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern backyard with patio"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lush maintained lawn"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tiered stone retaining wall"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1621905252472-943afaa20e20?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Garden with water feature"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1594571144685-e0b2f9b97b9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Front yard transformation"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Night landscape lighting"></div>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Contact Information</h2>
+    <h2>Contact Us</h2>
     <form id="contact-form">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="tel" name="phone" placeholder="Phone Number" required>
       <input type="email" name="email" placeholder="Email Address" required>
-      <textarea name="message" placeholder="Tell us about your project..." required></textarea>
+      <textarea name="message" placeholder="Tell us about your project or what you're looking for..." required></textarea>
       <button type="submit" class="btn">Send Message</button>
     </form>
   </section>
 
   <footer>
     <p>© Big Tree Landscaping — All Rights Reserved</p>
-    <p>(512) 705-0711  •  bigtreeprojects21@gmail.com</p>
-    <p>Made by the CSGOAT Noe</p>
-  </footer>
+    <p>(512) 705-0711  •  bigtreeprojects21@gmail.com
+    <p>Mde by the CSGOAT Noe</p>
 
-  <script>
-    // Simple nav scroll effect + active link
-    const nav = document.getElementById('navbar');
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a');
-
-    window.addEventListener('scroll', () => {
-      // Navbar background
-      nav.classList.toggle('scrolled', window.scrollY > 50);
-
-      // Active link
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 200;
-        if (scrollY >= sectionTop) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-          link.classList.add('active');
-        }
-      });
-    });
-
-    // Prevent form submission (demo)
-    document.getElementById('contact-form').addEventListener('submit', e => {
-      e.preventDefault();
-      alert("Thank you! Your message has been sent (this is a demo).");
-    });
-  </script>
-</body>
-</html>
 
 
 
